@@ -1,0 +1,121 @@
+/* css/hero.css */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--padding-lg) var(--padding-sm);
+    position: relative;
+    z-index: 1;
+    /* Removed padding-bottom */
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    /* Removed bottom and margin-top */
+}
+
+.hero-vector {
+    position: absolute;
+    width: 90%; /* Increased width to cover more area */
+    height: auto;
+    top: 60%; /* Adjusted top to position it behind the image */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure it's behind other content */
+    opacity: 0.8;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 3; /* Ensure hero image is above the vector */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 500px; /* Reduced height to close the gap */
+    /* Removed left and top for natural flow */
+    display: flex;
+    object-fit: cover;
+}
+
+.hero-content {
+    margin-bottom: var(--padding-md);
+    position: relative;
+    z-index: 3;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: var(--padding-md);
+    max-width: 500px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding: var(--padding-lg) var(--padding-md);
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .hero-content {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-image-container {
+        flex: 1;
+        max-width: 400px;
+        margin-top: 0;
+    }
+
+    .hero-vector {
+        width: 160%; /* Adjusted for tablet */
+        top: 65%;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .hero-section {
+        /* padding: var(--padding-lg)  var(--padding-lg); */
+        gap: 80px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto; /* Ensure image maintains aspect ratio */
+    }
+    .hero-content h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero-image-container {
+        max-width: 500px;
+    }
+
+    .hero-vector {
+        width: 180%; /* Adjusted for desktop */
+        top: 70%;
+    }
+}

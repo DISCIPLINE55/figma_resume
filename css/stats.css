@@ -1,0 +1,69 @@
+/* css/stats.css */
+.stats-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    padding:  5rem 0;
+    background-color: #FFFFFF; 
+    text-align: center;
+    /* border-radius: var(--border-radius-md); */
+    /* margin-left: 37px; */ /* Removed */
+    position: relative; /* Changed to relative for simpler top adjustment, or absolute if you want to place it independently */
+    z-index: 2; /* Higher than vector, potentially lower than hero image */
+    width: 100%; /* Full width for the section */
+    top: -37px; /* Adjust this value to bring it closer to the image, experiment as needed */
+    margin: 0 auto; /* Center the section if width is less than 100% */
+}
+
+.stat-item h2 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.8rem;
+    color: #070707;
+    margin-bottom: 0.5rem;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.stat-item h4 {
+    font-size: 1.125rem;
+    color: #070707;
+    margin-bottom: 0.5rem;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: #C4C4C4;
+    text-align: center;
+    line-height: 50%;
+    letter-spacing: -0.5%;
+    font-weight: 400;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .stats-section {
+        flex-direction: row;
+        justify-content: space-around;
+        /* padding: var(--padding-lg) var(--padding-md);
+        margin: var(--padding-lg) var(--padding-md);  */
+        /* width: 100%; */
+        align-self: self-end;
+        /* top: -80px;  */
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .stats-section {
+        width: 100%;
+        /*padding: var(--padding-lg);
+        /*margin: var(--padding-lg);  You might need to adjust this margin */
+       /* top: -100px; /* Adjust for desktop */
+    }
+}

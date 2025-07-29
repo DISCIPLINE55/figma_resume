@@ -1,0 +1,173 @@
+/* css/services.css */
+
+.services-section {
+    background-color: #0A122E; /* Dark blue background color */
+    padding: var(--padding-lg) var(--padding-md); /* Consistent padding */
+    color: #FFFFFF; /* Default text color for the section */
+    overflow: hidden;
+
+}
+
+.services-section .container {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    margin: 0 auto;
+    width: 100%; /* Full width for the container */
+    padding: 0 var(--padding-md); /* Add horizontal padding for smaller screens */
+}
+
+.services-section h2 { /* Targeting the main h2 for this section */
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.services-section p:first-of-type { /* Targeting the first paragraph for the subtitle */
+    font-family: 'Ubuntu' sans-serif;
+    font-size: 1rem;
+    color: #FFFFFF; 
+    line-height: 1.6;
+    font-weight: 400; /* Adjusted font weight */
+    text-align: Center; /* Centered as per why.png */
+    margin-bottom: 60px; /* Space below subtitle to grid */
+    max-width: 700px; /* Constrain width for readability */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 20px; /* Adjusted gap between cards */
+    width: 100%; /* Ensure grid takes full width */
+}
+
+.service-card {
+    background-color: #FFFFFF; /* Slightly lighter background for cards */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Border for cards */
+    border-radius: var(--border-radius-md); /* Rounded corners for cards */
+    padding: var(--padding-sm);
+    text-align: left; /* Align text left within card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/* Grouping icon and h3 for inline display */
+.service-card .icon-title-group {
+    display: flex; /* Use flexbox for icon and title */
+    align-items: flex-start; /* Align items to the start (top) */
+    gap: 15px; /* Space between icon and title */
+    margin-bottom: 15px; /* Space below the icon-title group */
+}
+
+
+.service-card .icon { /* Styling for Font Awesome icons */
+    display: flex; /* Make icon a flex container to center the actual glyph */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 60px; /* Fixed width for the circular container */
+    height: 60px; /* Fixed height for the circular container */
+    background-color: #FF006E; /* Pink background for the circle */
+    border-radius: 50%; /* Make it circular */
+    color: #FFFFFF; /* White color for the icon glyph inside the pink circle */
+    font-size: 1.7rem; /* Adjust Font Awesome glyph size to fit within the circle */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif; /* Ensure consistent font family */
+    font-weight: 700;
+    margin: 0; 
+    color: #000000;
+    line-height: 1.2; /* Ensure consistent line height */
+}
+
+.service-card p:last-child {
+    font-family: 'Ubuntu', sans-serif; /* Ensure consistent font family */
+    font-size: 1.5rem;
+    color: #272727;
+    text-align: left;
+    margin-bottom: var(--padding-sm);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Tablet adjustments (min-width: 768px) */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for tablet */
+        gap: 30px;
+    }
+
+    .services-section h2 {
+        font-size: 3rem;
+    }
+
+    .services-section p:first-of-type {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop adjustments (min-width: 1024px) */
+@media (min-width: 1024px) {
+  
+
+    .services-section .container {
+        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border as seen in Figma/image */
+        border-radius: var(--border-radius-md); /* Apply border-radius */
+        padding: 7rem 5rem; /* Internal padding for the whole container */
+        margin-top: -100px; /* Adjust negative margin to overlap previous section as seen in layout */
+    }
+
+    /* Titles and subtitles are now inside the bordered container, so their alignment might need adjustment if they were outside */
+    .services-section h2 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem; /* Adjust space after title */
+    }
+
+    .services-section p:first-of-type {
+        font-size: 1.15rem;
+        margin-bottom: 80px; /* More space before the grid starts on desktop */
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+        gap: 1.875rem; /* Larger gap between cards on desktop */
+    }
+
+    .service-card {
+        padding-top: 2.5rem;
+        width: 100%;
+        left: 46rem;
+        height: 25rem;
+    }
+
+    /* Desktop-specific adjustments for icon and h3 alignment */
+    .service-card .icon-title-group {
+        gap: 1.875rem; /* Slightly larger gap on desktop */
+        margin-bottom: 20px; /* More space after group */
+    }
+
+    .service-card .icon {
+        width: 4.375rem; /* Larger icon circle on desktop */
+        height: 4.375rem; /* Larger icon circle on desktop */
+        font-size: 2.188rem; /* Larger Font Awesome glyph size for desktop */
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem; /* Larger font for desktop benefit titles */
+    }
+
+    .service-card p {
+        font-size: 1rem;
+        margin-top: 2.875rem; /* More space before the paragraph */
+    }
+}

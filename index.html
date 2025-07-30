@@ -18,57 +18,87 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo-container">
-                <div class="nav-vectors">
-                    <div class="svg-wrapper">
-                        <svg class="curve" viewBox="0 0 200 50">
-                            <path fill="none" stroke="#FF0000" stroke-width="5" d="M0,25 C50,0 150,50 200,25" />
-                        </svg>
-                        <svg class="curve" viewBox="0 0 200 50">
-                            <path fill="none" stroke="#FF0000" stroke-width="5" d="M0,20 C50,40 150,0 200,30" />
-                        </svg>
-                        <svg class="curve" viewBox="0 0 200 50">
-                            <path fill="none" stroke="#FF0000" stroke-width="5" d="M0,30 C50,10 150,60 200,20" />
-                        </svg>
-                        <svg class="curve" viewBox="0 0 200 50">
-                            <path fill="none" stroke="#FF0000" stroke-width="5" d="M0,25 C50,0 150,50 200,25" />
-                        </svg>
-                        <svg class="curve" viewBox="0 0 200 50">
-                            <path fill="none" stroke="#FF0000" stroke-width="5" d="M0,20 C50,40 150,0 200,30" />
-                        </svg>
-                        <h1 class="logo-text">Freelance</h1>
-                    </div>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#article">Article</a></li>
-            </ul>
-            <button class="btn register-btn">Register</button>
-            <div class="hamburger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+<header>
+  <nav class="container">
+    <div class="logo-container">
+      <div class="nav-vectors">
+        <div class="svg-wrapper">
+          <!-- 5 Semi-circles -->
+          <svg class="semi-arc" viewBox="10 0 100 400" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,50 A70,50 0 0,0 100,50" fill="none" stroke="#FF0000" stroke-width="0.095" />
+          </svg>
+          <svg class="semi-arc" viewBox="10 0 100 400" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,50 A70,50 0 0,0 120,50" fill="none" stroke="#FF0000" stroke-width="0.08" />
+          </svg>
+          <svg class="semi-arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 A70,80 0 0,0 85,0" fill="none" stroke="#FF0000" stroke-width="0.07" />
+          </svg>
+          <svg class="semi-arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 A70,80 0 0,0 110,0" fill="none" stroke="#FF0000" stroke-width="0.06" />
+          </svg>
+          <svg class="semi-arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 A70,80 0 0,0 125,0" fill="none" stroke="#FF0000" stroke-width="0.05" />
+          </svg>
+         
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section container">
-        <div class="hero-content">
-            <h1>Hy! I Am<br>Shamima Akhi</h1>
-            <p>Service Line helps you to turn your complex multisite, multivendor imaging environment into a uniform and balanced operation.</p>
-            <button class="btn get-started-btn">Get Started</button>
+          <!-- Logo Text -->
+          <h1 class="logo-text">Freelance</h1>
         </div>
-        <div class="hero-image-container">
-            <div class="hero-image">
-                <img src="/images/hero.jpg" alt="Shamima Akhi">
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#article">Article</a></li>
+    </ul>
+
+    <button class="btn register-btn">Register</button>
+    <div class="hamburger-menu"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+
+
+
+<!-- Hero Section -->
+<section id="home" class="hero-section container">
+    <div class="hero-content">
+        <h1>Hy! I Am<br>Shamima Akhi</h1>
+        <p>Service Line helps you to turn your complex multisite, multivendor imaging environment into a uniform and balanced operation.</p>
+        <button class="btn get-started-btn">Get Started</button>
+    </div>
+    <div class="hero-image-container">
+        <!-- Hero Vectors (background lines) -->
+        <div class="hero-vectors">
+            <div class="hero-svg-wrapper">
+                <!-- IMPORTANT: Ensure these paths draw straight diagonal lines as in image.png -->
+                <!-- Example path for a straight diagonal line: d="M0,0 L100,100" -->
+                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
+                </svg>
+                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
+                </svg>
+                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
+                </svg>
+                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
+                </svg>
+                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
+                </svg>
             </div>
         </div>
-    </section>
+        <!-- Hero Image (foreground) -->
+        <div class="hero-image">
+            <img src="/images/hero.jpg" alt="Shamima Akhi">
+        </div>
+    </div>
+</section>
 
     <!-- Stats Section -->
     <section class="stats-section container">

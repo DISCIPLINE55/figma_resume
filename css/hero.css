@@ -1,121 +1,229 @@
-/* css/hero.css */
+/* Hero Section */
 .hero-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack content and image vertically on mobile */
     align-items: center;
-    text-align: center;
+    justify-content: center;
     padding: var(--padding-lg) var(--padding-sm);
-    position: relative;
-    z-index: 1;
-    /* Removed padding-bottom */
-}
-
-.hero-image-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    /* Removed bottom and margin-top */
-}
-
-.hero-vector {
-    position: absolute;
-    width: 90%; /* Increased width to cover more area */
-    height: auto;
-    top: 60%; /* Adjusted top to position it behind the image */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure it's behind other content */
-    opacity: 0.8;
-}
-
-.hero-image {
-    width: 100%;
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 3; /* Ensure hero image is above the vector */
-}
-
-.hero-image img {
-    width: 100%;
-    height: 500px; /* Reduced height to close the gap */
-    /* Removed left and top for natural flow */
-    display: flex;
-    object-fit: cover;
+    text-align: center;
+    gap: 40px; /* Space between content and image on mobile */
+    min-height: 80vh; /* Ensure hero section takes up significant vertical space */
+    position: relative; /* For absolute positioning of hero-image-container */
+    z-index: 1; /* Ensure hero content is above any lower background elements */
+    background-color: var(--dark-blue); /* Ensure hero section has a background */
 }
 
 .hero-content {
-    margin-bottom: var(--padding-md);
-    position: relative;
-    z-index: 3;
+    max-width: 600px;
+    margin-bottom: 20px;
 }
 
 .hero-content h1 {
     font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-light);
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: var(--padding-md);
-    max-width: 500px;
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-/* Tablet */
+.get-started-btn {
+    background-color: var(--accent-pink);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background-color: var(--accent-pink-dark);
+}
+
+.hero-image-container {
+    /* background-color: red; Removed debugging background */
+    position: relative; /* Establishes positioning context for .hero-vectors and .hero-image */
+    width: 100%; /* Take full width on mobile */
+    max-width: 400px; /* Limit image size on mobile */
+    height: 400px; /* Maintain explicit height for consistent vector positioning */
+}
+
+.hero-image {
+    /* background-color: blue; Removed debugging background */
+    position: absolute; /* Positioned relative to .hero-image-container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Fill the parent container */
+    z-index: 2; /* Ensure the actual image is on top of the vectors */
+    border-radius: var(--border-radius-lg); /* If your image has rounded corners */
+    overflow: hidden; /* To contain potential rounded corners */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%; /* Fill the parent .hero-image div */
+    display: block;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+
+/* Hero Vectors (the gently curved lines) */
+.hero-vectors {
+    /* background-color: rgba(0, 255, 0, 0.2); Removed debugging background */
+    position: absolute; /* Positioned relative to .hero-image-container */
+    top: 0;
+    right: 500px; /* Pushes the vector container partly into the right margin */
+    width: 150%; /* Make it wider than the image container to extend into margin */
+    height: 100%; /* Will scale to image container height */
+    overflow: hidden; /* Clip lines that go outside this area */
+    pointer-events: none; /* Crucial: Allows clicks to pass through */
+    z-index: 1; /* Behind the hero-image (z-index: 2) */
+}
+
+.hero-svg-wrapper {
+    position: absolute; /* Positioned within hero-vectors */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the individual arc vectors */
+.arc {
+    position: absolute;
+    width: 150px; /* Visual width of each arc SVG */
+    height: 150px; /* Visual height of each arc SVG */
+    opacity: 0.15; /* Overall line transparency. Adjust for desired faintness. */
+    filter: blur(0.7px); /* Subtle blur for softness. Adjust as needed. */
+    stroke: #B565A8; /* Reddish-purple from screenshot */
+    stroke-width: 2px; /* Line thickness. Adjust for desired thinness/boldness. */
+    fill: none; /* No fill for arcs, just the stroke */
+    pointer-events: none;
+
+    transform-origin: 50% 50%; /* Rotate around the center of each SVG */
+    transform: rotate(45deg); /* Adjust this angle to match the diagonal tilt */
+}
+
+/* Individual arc spacing and position relative to .hero-svg-wrapper */
+/* These values are estimates and will need precise fine-tuning based on your desired look */
+/* The key is to progressively increase top and left to create the "dropping down right" effect */
+.arc:nth-child(1) {
+    top: -50px; /* Shift up to appear above the image */
+    left: 100px; /* Shift right to appear mostly on the right side */
+    opacity: 0.1; /* Fainter outer arc */
+    transform: rotate(45deg) scale(0.9); /* Slight scale for perspective */
+}
+
+.arc:nth-child(2) {
+    top: -20px;
+    left: 120px;
+    opacity: 0.12;
+    transform: rotate(45deg) scale(0.95);
+}
+
+.arc:nth-child(3) {
+    top: 10px;
+    left: 140px;
+    opacity: 0.15; /* Main, most visible arc */
+    transform: rotate(45deg) scale(1);
+}
+
+.arc:nth-child(4) {
+    top: 40px;
+    left: 160px;
+    opacity: 0.12;
+    transform: rotate(45deg) scale(0.95);
+}
+
+.arc:nth-child(5) {
+    top: 70px;
+    left: 180px;
+    opacity: 0.1; /* Fainter outer arc */
+    transform: rotate(45deg) scale(0.9);
+}
+
+
+/* --- Media Queries --- */
+
+/* Tablet and larger screens */
 @media (min-width: 768px) {
     .hero-section {
-        flex-direction: row;
+        flex-direction: row; /* Layout content and image side-by-side */
         text-align: left;
+        gap: 60px; /* More space between content and image */
         padding: var(--padding-lg) var(--padding-md);
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
     }
 
     .hero-content {
-        flex: 1;
-        margin-bottom: 0;
+        margin-bottom: 0; /* Remove bottom margin for horizontal layout */
     }
 
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 3.5rem; /* Larger font for desktop */
     }
 
     .hero-image-container {
-        flex: 1;
-        max-width: 400px;
-        margin-top: 0;
+        max-width: 500px; /* Larger image container on tablet/desktop */
+        height: 500px; /* Explicit height for consistent vector positioning */
     }
 
-    .hero-vector {
-        width: 160%; /* Adjusted for tablet */
-        top: 65%;
+    /* Adjust vector size and position for larger screens */
+    .hero-vectors {
+        right: -80px; /* Push further right on tablet */
+        width: 150%; /* More width to extend into margin */
+        height: 100%;
     }
+    .arc {
+        width: 180px; /* Adjust length of arcs */
+        height: 180px;
+        filter: blur(0.9px);
+        transform: rotate(40deg); /* Slightly different angle for tablet */
+    }
+    .arc:nth-child(1) { top: -60px; left: 120px; transform: rotate(40deg) scale(0.9); }
+    .arc:nth-child(2) { top: -20px; left: 140px; transform: rotate(40deg) scale(0.95); }
+    .arc:nth-child(3) { top: 20px; left: 160px; transform: rotate(40deg) scale(1); }
+    .arc:nth-child(4) { top: 60px; left: 180px; transform: rotate(40deg) scale(0.95); }
+    .arc:nth-child(5) { top: 100px; left: 200px; transform: rotate(40deg) scale(0.9); }
 }
 
-/* Desktop */
+/* Desktop screens */
 @media (min-width: 1024px) {
     .hero-section {
-        /* padding: var(--padding-lg)  var(--padding-lg); */
-        gap: 80px;
+        padding: var(--padding-xl) var(--padding-lg);
     }
 
-    .hero-image img {
-        width: 100%;
-        height: auto; /* Ensure image maintains aspect ratio */
-    }
     .hero-content h1 {
-        font-size: 4.5rem;
+        font-size: 4.5rem; /* Even larger font for large desktops */
     }
 
     .hero-image-container {
         max-width: 500px;
+        height: 650px; /* Explicit height for consistent vector positioning */
     }
 
-    .hero-vector {
-        width: 180%; /* Adjusted for desktop */
-        top: 70%;
+    /* Adjust vector size and position for large desktops */
+    .hero-vectors {
+        right: -500px; /* Push even further right on desktop */
+        width: 150%; /* Maintain wide width */
+        height: 100%;
     }
+    .arc {
+        width: 320px; /* Adjust length of arcs */
+        height: 220px;
+        filter: blur(1.1px);
+        transform: rotate(35deg); /* Slightly different angle for large desktop */
+    }
+    .arc:nth-child(1) { top: -80px; left: 150px; transform: rotate(35deg) scale(0.9); }
+    .arc:nth-child(2) { top: -30px; left: 170px; transform: rotate(35deg) scale(0.95); }
+    .arc:nth-child(3) { top: 20px; left: 190px; transform: rotate(35deg) scale(1); }
+    .arc:nth-child(4) { top: 70px; left: 210px; transform: rotate(35deg) scale(0.95); }
+    .arc:nth-child(5) { top: 120px; left: 230px; transform: rotate(35deg) scale(0.9); }
 }

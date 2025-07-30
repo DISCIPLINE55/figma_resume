@@ -1,207 +1,205 @@
 /* css/navbar.css */
 /* Header Section */
 header {
-    background-color: var(--dark-blue);
-    padding: var(--padding-md) 0;
-    position: relative;
-    z-index: 10;
+  background-color: var(--dark-blue);
+  padding: var(--padding-md) 0;
+  position: relative;
+  z-index: 10;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 var(--padding-sm);
-    margin-bottom: var(--padding-lg);
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--padding-sm);
+  margin-bottom: var(--padding-lg);
+  position: relative;
 }
 
 /* Logo container with vector */
 .logo-container {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .nav-vectors {
-    position: relative;
-    /* Adjust width/height as needed if the wrapper doesn't automatically size to the text */
+  position: relative;
 }
 
 .svg-wrapper {
-    position: relative;
-    /* width: max-content; */ /* Removed this to give more control over sizing */
-    width: 200px; /* Adjust this to roughly match the width of your logo text area */
-    height: 70px; /* Adjust this height to accommodate the vertical spread of your lines */
-    border-radius: 50%; /* Optional, for a rounded effect */
-    display: flex;
-    align-items: left;
-    justify-content: center; /* Center content, including logo-text and SVGs */
+  position: relative;
+  transform: rotate(45deg); /* diagonal tilt */
 }
 
-.curve {
-    position: absolute;
-    width: 200px; /* Adjust this to control the visual width of the line */
-    height: 50px; /* Adjust this to control the visual height (waviness) of the line */
-    z-index: -1; /* Place it behind the logo-text */
-    opacity: 0.2; /* Subtle opacity for the glowing effect */
-    /* Use filter: blur() for the soft, glowing appearance */
-    filter: blur(2px); /* Adjust blur amount - usually smaller for lines than blobs */
-    border-radius: 50%; /* Optional, for a rounded effect */
-    overflow: visible; /* Ensure entire line is visible even if it extends beyond its viewBox */
+.semi-arc {
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  transform: rotate(-90deg);
+  z-index: 1;
 }
 
-/* Move each line slightly, rotate, and scale for overlap effect */
-/* These values will need heavy fine-tuning based on your actual path 'd' values */
-.curve:nth-child(1) { top: -20px; left: -10px; transform: scaleX(0.9) rotate(-5deg); }
-.curve:nth-child(2) { top: -10px; left: -5px; transform: scaleX(1.0) rotate(0deg); }
-.curve:nth-child(3) { top: 0px; left: 0px; transform: scaleX(1.1) rotate(5deg); }
-.curve:nth-child(4) { top: 10px; left: 5px; transform: scaleX(1.05) rotate(10deg); }
-.curve:nth-child(5) { top: 20px; left: 10px; transform: scaleX(0.95) rotate(15deg); }
-
-
-/* Ensure the logo text is on top of the vectors */
 .logo-text {
-    position: relative;
-    z-index: 1; /* Place it above the curve SVGs (z-index: -1) */
-    font-size: 36px;
-    font-weight: bold;
-    color: var(--text-light); /* Assuming this is white or light color */
-    padding-left: 5px; /* Adjust padding to separate from potential overlapping curves */
-    /* Add background-color to text or logo if lines show through the text itself */
-    /* background-color: var(--dark-blue); */
+  top: 0;       
+  left: 0;  
+  z-index: 2;
+  transform: rotate(-45deg);
+  color: var(--text-light);
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
-/* Original .logo class */
 .logo {
-    position: relative;
-    z-index: 1;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text-light);
+  position: relative;
+  z-index: 1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-light);
 }
 
-/* Navigation links and other existing styles remain the same */
+/* Navigation links */
 .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    background-color: var(--dark-blue);
-    z-index: 1000;
-    padding: var(--padding-md) 0;
-    text-align: center;
-    border-bottom: 1px solid var(--light-dark-blue);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  top: 5rem;               /* 80px */
+  left: 0;
+  background-color: var(--dark-blue);
+  z-index: 1000;
+  padding: var(--padding-md) 0;
+  text-align: center;
+  border-bottom: 1px solid var(--light-dark-blue);
+  box-shadow: 0 0.625rem 0.9375rem rgba(0, 0, 0, 0.2); /* 10px 15px */
 }
 
 .nav-links.active {
-    display: flex;
+  display: flex;
 }
 
 .nav-links li {
-    margin: 10px 0;
+  margin: 0.625rem 0;        /* 10px */
 }
 
 .nav-links a {
-    font-size: 1.1rem;
-    padding: 12px 0;
-    display: block;
-    transition: color 0.3s ease;
+  font-size: 1.1rem;
+  padding: 0.75rem 0;        /* 12px */
+  display: block;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent-pink);
+  color: var(--accent-pink);
 }
 
 .register-btn {
-    display: none;
+  display: none;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 3.125rem;   /* 50px */
 }
 
 .hamburger-menu {
-    display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--text-light);
-    z-index: 20;
-    transition: transform 0.3s ease;
+  display: block;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-light);
+  z-index: 20;
+  transition: transform 0.3s ease;
 }
 
 .hamburger-menu.active {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /* Tablet and larger screens */
 @media (min-width: 768px) {
-    nav {
-        padding: 0 var(--padding-md);
-    }
+  nav {
+    padding: 0 var(--padding-md);
+  }
 
-    .nav-links {
-        position: static;
-        flex-direction: row;
-        width: auto;
-        background-color: transparent;
-        border-bottom: none;
-        padding: 0;
-        display: flex;
-        box-shadow: none;
-    }
+  .nav-links {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+    display: flex;
+    box-shadow: none;
+  }
 
-    .nav-links li {
-        margin: 0 15px;
-    }
+  .nav-links li {
+    margin: 0 0.9375rem;     /* 15px */
+  }
 
-    .register-btn {
-        display: block;
-    }
+  .register-btn {
+    display: block;
+  }
 
-    .hamburger-menu {
-        display: none;
-    }
+  .hamburger-menu {
+    display: none;
+  }
 
-    /* Adjust desktop curve positioning */
-    .svg-wrapper {
-        width: 250px; /* Adjust width for desktop */
-        height: 80px; /* Adjust height for desktop */
-    }
-    .curve {
-        width: 250px; /* Wider lines */
-        height: 60px; /* Taller waviness */
-        filter: blur(3px); /* Slightly more blur on desktop */
-    }
-    .curve:nth-child(1) { top: -25px; left: -15px; transform: scaleX(0.95) rotate(-15deg); }
-    .curve:nth-child(2) { top: -12px; left: -7px; transform: scaleX(1.0) rotate(15deg); }
-    .curve:nth-child(3) { top: 0px; left: 0px; transform: scaleX(1.1) rotate(8deg); }
-    .curve:nth-child(4) { top: 12px; left: 7px; transform: scaleX(1.05) rotate(16deg); }
-    .curve:nth-child(5) { top: 25px; left: 15px; transform: scaleX(0.98) rotate(24deg); }
+  .logo-text {
+    position: absolute;
+    top: 2.5rem;       
+    left: 1.25rem;  
+    z-index: 2;
+    transform: rotate(-45deg);
+    color: var(--text-light);
+    font-size: 1.6rem;
+    font-weight: bold;
+ }
+
+  .svg-wrapper {
+    width: 15.625rem;       /* 250px */
+    height: 5.625rem;       /* 90px */
+  }
+
+  .semi-arc:nth-child(1) { top: -4.375rem; left: 4.6875rem; width: 6.25rem; } /* -70px, 75px, 100px */
+  .semi-arc:nth-child(2) { top: -11.875rem; left: 8.75rem; }                 /* -190px, 140px */
+  .semi-arc:nth-child(3) { top: -1.875rem; left: 0.625rem; }                 /* -30px, 10px */
+  .semi-arc:nth-child(4) { top: -0.3125rem; left: -0.3125rem; }             /* -5px, -5px */
+  .semi-arc:nth-child(5) { top: 1.25rem; left: -1.25rem; }                   /* 20px, -20px */
 }
 
 /* Desktop screens */
 @media (min-width: 1024px) {
-    nav {
-        padding: 0 var(--padding-lg);
-    }
+  nav {
+    padding: 0 var(--padding-lg);
+  }
 
-    .nav-links {
-        width: 29.125rem;
-    }
+  .nav-links {
+    width: 29.125rem;
+  }
 
-    /* Adjust desktop curve positioning further */
-    .svg-wrapper {
-        width: 300px; /* Even wider for large screens */
-        height: 90px;
-    }
-    .curve {
-        width: 300px;
-        height: 70px;
-        filter: blur(4px);
-    }
-    .curve:nth-child(1) { top: -30px; left: -20px; transform: scaleX(0.98) rotate(-10deg); }
-    .curve:nth-child(2) { top: -15px; left: -10px; transform: scaleX(1.0) rotate(0deg); }
-    .curve:nth-child(3) { top: 0px; left: 0px; transform: scaleX(1.12) rotate(10deg); }
-    .curve:nth-child(4) { top: 15px; left: 10px; transform: scaleX(1.08) rotate(20deg); }
-    .curve:nth-child(5) { top: 30px; left: 20px; transform: scaleX(1.0) rotate(30deg); }
+  .svg-wrapper {
+    width: 18.75rem;       /* 300px */
+    height: 5.625rem;      /* 90px */
+  }
+
+  .curve {
+    width: 18.75rem;       /* 300px */
+    height: 4.375rem;      /* 70px */
+    filter: blur(0.25rem); /* 4px */
+  }
+
+  .logo-text {
+    position: absolute;
+    top: 4.5rem;       
+    left: 1rem;  
+    z-index: 2;
+    transform: rotate(-45deg);
+    color: var(--text-light);
+    font-size: 1.6rem;
+    font-weight: bold;
+ }
+
+  .semi-arc:nth-child(1) { top: -4.375rem; left: 4.6875rem; width: 6.25rem; }
+  .semi-arc:nth-child(2) { top: -11.875rem; left: 8.75rem; }
+  .semi-arc:nth-child(3) { top: -1.875rem; left: 0.625rem; }
+  .semi-arc:nth-child(4) { top: -0.3125rem; left: -0.3125rem; }
+  .semi-arc:nth-child(5) { top: 1.25rem; left: -1.25rem; }
 }

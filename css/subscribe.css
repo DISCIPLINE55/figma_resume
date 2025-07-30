@@ -1,0 +1,36 @@
+/* css/subscribe.css */
+.subscribe-section {
+    background-color: var(--white-cards);
+    padding: var(--padding-lg) 0;
+    text-align: center;
+    border-top: 2px solid var(--dark-blue);
+    border-bottom: 2px solid var(--dark-blue);
+    margin-top: var(--padding-lg);
+}
+
+.subscribe-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 var(--padding-sm);
+}
+
+.subscribe-now {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.subscribe-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.subscribe-btn {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+}

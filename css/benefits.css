@@ -1,265 +1,191 @@
-/* css/benefits.css */
+/* Main Benefits Section Styling */
 .benefits-section {
-    background-color: #0A122E; /* Dark blue background color */
-    padding: var(--padding-lg) var(--padding-md); /* Consistent padding */
-    color: #FFFFFF; /* Default text color for the section */
-    overflow: hidden; /* To contain any elements that might overflow */
-    position: relative; /* Essential for z-index */
-    z-index: 3; /* Ensure it's above elements it overlaps (e.g., stats, which likely has z-index 2 or lower) */
-    margin-top: -80px; /* Initial negative margin for overlap on smaller screens */
+    background-color: #0A122E;
+    padding: var(--padding-lg) var(--padding-md);
+    color: #FFFFFF;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    margin-top: -5rem; /* Creates overlap with previous section */
 }
 
+/* Container Layout */
 .benefits-section .container {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 30px; /* Increased gap between main sections for better mobile spacing */
+    grid-template-columns: 1fr;
+    gap: 1.875rem;
 }
 
+/* Section Header Elements */
 .benefits-section .section-subtitle {
     font-size: 1rem;
     font-weight: 400;
     line-height: 100%;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
     font-family: 'Ubuntu', sans-serif;
-    color:#FFFFFF;
+    color: #FFFFFF;
     text-transform: uppercase;
-    margin-bottom: 10px;
-    text-align: left;
+    margin-bottom: 0.625rem;
 }
 
 .benefits-section .section-title {
-    font-size: 1rem; /* Slightly larger for mobile title */
+    font-size: 1rem;
     line-height: 1.2;
-    font-weight: 700; /* Made bolder as per image */
-    margin-bottom: 15px;
-    text-align: left;
+    font-weight: 700;
+    margin-bottom: 0.9375rem;
 }
 
 .benefits-section .section-description {
-    font-size: 1rem; /* Slightly smaller for mobile description */
-    color: #FFFFFF; /* Light grey as per image */
+    font-size: 1rem;
+    color: #FFFFFF;
     line-height: 1.6;
     font-weight: 300;
     font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 40px; /* Keep consistent spacing */
-    max-width: 100%; /* Allow full width on mobile */
-    text-align: left;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
 }
 
+/* Benefits Grid Layout */
 .benefits-grid {
     display: flex;
-    flex-direction: column; /* Stack vertically on mobile */
-    gap: 20px; /* Gap between benefit items on mobile */
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
+/* Individual Benefit Items */
 .benefit-item {
-    background-color: transparent; /* Remove background, main section has it */
-    padding: 0; /* Remove padding from item, add to content inside */
+    background-color: transparent;
+    padding: 0;
     color: #FFFFFF;
-    border-radius: 0; /* No explicit border-radius on items */
-    text-align: left;
     position: relative;
-    /* The line should not be displayed on mobile */
 }
 
-/* Adjustments for the icon/title grouping */
 .benefit-item .benefit-icon {
     display: flex;
-    flex-direction: row; /* Icon and title in a row */
-    align-items: center; /* Vertically align icon and title */
-    gap: 15px; /* Space between icon and title */
-    width: auto; /* Remove fixed width */
-    height: auto; /* Remove fixed height */
-    margin-bottom: 10px; /* Space below the icon/title group */
+    flex-direction: row;
+    align-items: center;
+    gap: 0.9375rem;
+    margin-bottom: 0.625rem;
 }
 
 .benefit-item .benefit-icon img {
-    width: 30px; /* Size of the icon */
-    height: 30px;
-    filter: brightness(0) invert(1); /* Ensure icons are white */
+    width: 1.875rem;
+    height: 1.875rem;
+    filter: brightness(0) invert(1);
 }
 
 .benefit-item .benefit-icon h3 {
-    padding: 0; /* Remove padding inherited from original h3 styles */
-    font-size: 1.2rem; /* Adjusted size for mobile */
-    margin: 0; /* Remove default h3 margins */
+    font-size: 1.2rem;
+    margin: 0;
     color: #FFFFFF;
 }
 
 .benefit-item p {
-    padding: 0 0 0 45px; /* Indent paragraph to align with text below title */
+    padding: 0 0 0 2.8125rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
-    font-size: 1rem; /* Adjusted for mobile */
-    color: #FFFFFF; 
+    font-size: 1rem;
     line-height: 1.6;
 }
 
-
-/* Tablet adjustments (min-width: 768px) */
-@media (min-width: 768px) {
+/* Tablet Layout (768px+) */
+@media (min-width: 48rem) {
     .benefits-section {
-        margin-top: -120px; /* Adjust overlap for tablet */
-        padding: var(--padding-lg) var(--padding-md); /* Consistent padding */
+        margin-top: -7.5rem;
     }
 
     .benefits-section .container {
-        grid-template-columns: 1fr 1fr; /* Two columns for main title/description */
-        gap: 40px; /* Gap between main columns */
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
     }
 
     .benefits-section .section-title {
-        font-size: 1.8rem; /* Larger font for tablet title */
-        grid-column: 1 / 2; /* Ensure title stays in first column */
+        font-size: 1.8rem;
+        grid-column: 1 / 2;
     }
 
     .benefits-section .section-description {
-        grid-column: 2 / 3; /* Place description in the second column */
-        grid-row: 1 / span 2; /* Span rows if needed to align */
-        margin-bottom: 0; /* Remove bottom margin here */
-        align-self: flex-start; /* Align to the start of the grid cell */
-        max-width: none; /* Allow full width of its grid column */
+        grid-column: 2 / 3;
+        grid-row: 1 / span 2;
+        margin-bottom: 0;
     }
 
     .benefits-grid {
-        flex-direction: row; /* Layout horizontally */
-        grid-column: 1 / 3; /* Span both columns of the main grid */
-        justify-content: space-between; /* Distribute items with space */
-        gap: 20px; /* Gap between benefit items on tablet */
-        margin-top: 30px; /* Space between grid and text above */
+        flex-direction: row;
+        grid-column: 1 / 3;
+        margin-top: 1.875rem;
     }
 
     .benefit-item {
-        flex: 1; /* Allow items to grow/shrink */
-        max-width: 33%; /* Approximately 3 items across */
-        padding-right: 0; /* Reset padding right */
+        max-width: 33%;
     }
 
-    .benefit-item .benefit-icon h3 {
-        font-size: 1rem; /* Larger font for tablet title */
-    }
-
-    .benefit-item p {
-        font-size: 1rem; /* Adjust font size */
-    }
-
-    /* Vertical line separator for tablet */
+    /* Vertical separators between items */
     .benefit-item::after {
         content: '';
         position: absolute;
         top: 0;
         margin-top: 25%;
-        right: -10px; /* Adjust as needed for spacing */
-        width: 2px; /* Thinner line */
-        height: 50%; /* Spans full height of item */
-        background-color: rgba(247, 7, 7, 0.9);
-        display: block; /* Show line */
+        right: -0.625rem;
+        width: 0.125rem;
+        height: 50%;
+        background-color: var(--white-cards);
     }
 
     .benefit-item:last-child::after {
-        display: none; /* No line after the last item */
-    }
-
-    .benefit-item:nth-child(2)::after { /* Adjust for the line between 2nd and 3rd if layout is off */
-        height: 50%;
+        display: none;
     }
 }
 
-/* Desktop adjustments (min-width: 1024px) */
-@media (min-width: 1024px) {
-    .benefits-section {
-        padding: 0; /* Remove section padding here, container will handle it */
-    }
-
+/* Desktop Layout (1024px+) */
+@media (min-width: 64rem) {
     .benefits-section .container {
-        /* This container now acts as the bordered box for desktop */
-        display: grid;
-        grid-template-columns: 1fr 1.2fr; /* Adjust column width ratio for desktop: title on left, description on right */
-        gap: 80px; /* Gap between the title column and description column */
-        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border as seen in Figma */
-        padding: 7rem 5rem; /* Internal padding for the whole container to push content in */
-        margin: 0 auto; /* Center the container */
-        width: 100%; /* Example max-width for the container */
-        border-radius: var(--border-radius-md); /* Apply border-radius if desired for the container */
-    }
-
-    /* Adjust placement and styling of section title and subtitle */
-    .benefits-section .section-subtitle {
-        grid-column: 1 / 2; /* Stays in the first column */
-        align-self: flex-start; /* Aligns to the top */
-        margin-bottom: 0; /* Reset margin bottom as gap handles spacing */
-        padding-top: 10px; /* Small adjustment if needed for alignment */
+        grid-template-columns: 1fr 1.2fr;
+        gap: 5rem;
+        border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+        padding: 7rem 5rem;
+        border-radius: var(--border-radius-md);
     }
 
     .benefits-section .section-title {
-        font-size: 2.2rem; /* Larger font for desktop title */
-        grid-column: 1 / 2; /* Stays in the first column */
-        align-self: flex-start; /* Aligns to the top */
-        margin-bottom: 0; /* Reset margin bottom */
+        font-size: 2.2rem;
     }
 
-    /* Adjust placement and styling of section description */
     .benefits-section .section-description {
-        font-family: 'Ubuntu' sans-serif;;
-        color: #FFFFFF;
-        font-size: 1rem; /* Larger font for desktop description */
-        grid-column: 2 / 3; /* Moves to the second column */
-        grid-row: 1 / span 2; /* Spans across the rows of title and subtitle */
-        align-self: flex-start; /* Aligns to the top of its grid area */
-        max-width: none; /* Allow full width of its grid column */
-        margin-bottom: 0; /* No extra margin pushing other content */
         margin-top: 30%;
     }
 
-    /* Styling for the benefits grid */
     .benefits-grid {
-        grid-column: 1 / 3; /* Spans both columns of the .container grid */
-        flex-direction: row; /* Ensure horizontal layout */
-        justify-content: space-between; /* Distribute items evenly */
-        gap: 0; /* Remove gap between items as padding and line spacing will handle it */
-        margin-top: 50px; /* Space between the main text content and the benefits grid */
-        padding-left: 20px; /* Add some padding to align with the main text content */
-        padding-right: 20px;
+        margin-top: 3.125rem;
+        padding: 0 1.25rem;
     }
 
     .benefit-item {
-        flex: 1; /* Allow items to grow/shrink equally */
-        max-width: 30%; /* Roughly 1/3rd of the grid's width for three items */
-        padding-left: 0; /* Reset previous paddings */
-        padding-right: 30px; /* Add internal padding for content */
-        position: relative; /* Ensure ::after positioning context */
+        padding-right: 1.875rem;
     }
 
     .benefit-item .benefit-icon {
-        gap: 20px; /* Larger gap between icon and title on desktop */
-        margin-bottom: 15px; /* Adjust spacing */
+        gap: 1.25rem;
     }
 
     .benefit-item .benefit-icon h3 {
-        font-size: 1.3rem; /* Larger font for desktop benefit titles */
+        font-size: 1.2rem;
+        font-weight: 700;
     }
 
     .benefit-item p {
-        font-size: 1rem; /* Slightly larger for desktop paragraphs */
-        padding: 0 0 0 50px; /* Adjust indent to align with icon + title */
-        line-height: 1.5;
+        padding: var(--padding-sm) 0 0 2.8125rem;
+        font-size: 1.1rem;
+        font-weight: 300;
+        line-height: 1.8;
+        text-align: left;
+        color: #FFFFFF;
     }
 
-    /* Vertical line for desktop */
+    /* Adjusted vertical separators for desktop */
     .benefit-item::after {
-        display: block; /* Ensure line is visible */
-        position: absolute;
-        content: '';
-        top: 0; /* Start from the top of the benefit item */
-        right: -15px; /* Adjust to place the line between items, experiment here */
-        width: 2px; /* Thicker line as in Figma */
-        height: 50%; /* Fixed height for the line, adjust as needed to match image */
+        right: -0.9375rem;
         margin-top: 10%;
-        background-color: rgba(225, 116, 116, 0.9);
-        transform: translateY(20%); /* Vertically center the fixed-height line */
-    }
-
-    .benefit-item:last-child::after {
-        display: none; /* No line after the last item */
+        transform: translateY(20%);
     }
 }

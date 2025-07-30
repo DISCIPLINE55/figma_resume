@@ -71,29 +71,26 @@
         <button class="btn get-started-btn">Get Started</button>
     </div>
     <div class="hero-image-container">
-        <!-- Hero Vectors (background lines) -->
+        <!-- 5 Red curved lines behind hero -->
         <div class="hero-vectors">
-            <div class="hero-svg-wrapper">
-                <!-- IMPORTANT: Ensure these paths draw straight diagonal lines as in image.png -->
-                <!-- Example path for a straight diagonal line: d="M0,0 L100,100" -->
-                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
-                </svg>
-                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
-                </svg>
-                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
-                </svg>
-                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
-                </svg>
-                <svg class="arc" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,0 L100,100" fill="none" stroke="#B565A8" stroke-width="2" />
-                </svg>
-            </div>
+            <!-- Razor-sharp downward curves -->
+            <svg class="hero-curve" viewBox="0 0 200 40">
+                <path d="M-30,100 Q250,55 200,-40" fill="none" stroke="#FF0000" stroke-width="0.05"/>
+            </svg>
+            <svg class="hero-curve" viewBox="0 0 200 40">
+                <path d="M-0,100 Q250,50 200,-20" fill="none" stroke="#FF0000"oke-width="0.05"/>
+            </svg>
+            <svg class="hero-curve" viewBox="0 0 200 40">
+                <path d="M30,100 Q250,60 200,-25" fill="none" stroke="#FF0000" stroke-width="0.05"/>
+            </svg>
+            <svg class="hero-curve" viewBox="0 0 200 40">
+                <path d="M30,100 Q250,70 200,-20" fill="none" stroke="#FF0000" stroke-width="0.05"/>
+            </svg>
+            <svg class="hero-curve" viewBox="0 0 200 40">
+                <path d="M30,100 Q250,80 200,-5" fill="none" stroke="#FF0000" stroke-width="0.05"/>
+            </svg>
         </div>
-        <!-- Hero Image (foreground) -->
+        <!-- Hero Image -->
         <div class="hero-image">
             <img src="/images/hero.jpg" alt="Shamima Akhi">
         </div>
@@ -201,7 +198,118 @@
             </div>
     </section>
 
+    <!--portfolio section-->   
+    <section id="portfolio" class="portfolio-section container">
+            <h2 class="portfolio-title">Some of my Creative Work</h2>
+            <p>An all electric vehicle offering an estimated 20 plus miles of range <br>per charge for an affordable price is how we define but passion <br> and persistence are the principles used to accomplish it</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/images/creative1.png" alt="Creative work 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/creative2.png" alt="Creative work 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/creative3.png" alt="Creative work 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/creative4.png" alt="Creative work 4">
+                </div>
+            </div>
+    </section>   
+    
+    <section id="pricing" class="pricing-section container">
+    <p class="section-subtitle">Our Pricing</p> <h2>available prices and cheap packages</h2>
+    <div class="pricing-grid">
+        <div class="price-card">
+            <h3>Basic</h3> <p class="price">$12<span class="price-duration">/month</span></p> <ul>
+                <li><i class="fas fa-check-circle"></i> Got access only 1 day</li>
+                <li><i class="fas fa-check-circle"></i> Get free drinks and snacks</li>
+                <li><i class="fas fa-check-circle"></i> Free parking for 1 month</li>
+                <li><i class="fas fa-check-circle"></i> No private workout in a special room</li> <li><i class="fas fa-check-circle"></i> No Access to the fitness community</li> </ul>
+            <button class="btn choose-plan-btn">Get Started</button>
+        </div>
+        <div class="price-card featured-card"> <h3>Premium</h3> <p class="price">$24<span class="price-duration">/month</span></p> <ul>
+                <li><i class="fas fa-check-circle"></i> Got access only 1 day</li>
+                <li><i class="fas fa-check-circle"></i> Get free drinks and snacks</li>
+                <li><i class="fas fa-check-circle"></i> Private workout in a special room</li>
+                <li><i class="fas fa-check-circle"></i> Free parking for 1 month</li>
+                <li><i class="fas fa-check-circle"></i> Access to the fitness community</li>
+            </ul>
+            <button class="btn choose-plan-btn premium-btn">Get Started</button>
+        </div>
+        <div class="price-card">
+            <h3>Super</h3> <p class="price">$32<span class="price-duration">/month</span></p> <ul>
+                <li><i class="fas fa-check-circle"></i> Got access only 1 day</li>
+                <li><i class="fas fa-check-circle"></i> Get free drinks and snacks</li>
+                <li><i class="fas fa-check-circle"></i> Free parking for 1 year</li> <li><i class="fas fa-check-circle"></i> Private workout in a special room</li>
+                <li><i class="fas fa-check-circle"></i> Access to the fitness community</li>
+            </ul>
+            <button class="btn choose-plan-btn">Get Started</button>
+        </div>
+    </div>
+</section>
+    <!--Subsciption Section-->
+  <section class="subscribe-section">
+    <div class="subscribe-container container">
+        <p class="subscribe-now">Subscribe Now</p>
+        <h2 class="subscribe-title">Subscribe to get update info from us</h2>
+        <button class="btn subscribe-btn">Get Started</button>
+    </div>
+</section>
 
+    <!--Footer Section-->
+<footer class="footer-section">
+    <div class="footer-content container">
+        <div class="footer-brand">
+            <h3>Cartrix</h3>
+            <p>An all Design Tools offering an estimated 20 plus Design of range per charge for an affordable price is how we define but passion and persistence
+            </p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-links-group">
+            <h4>Our Design</h4>
+            <ul>
+                <li><a href="#">Adobe Illustration</a></li>
+                <li><a href="#">Commercial Design</a></li>
+                <li><a href="#">Web Development</a></li>
+            </ul>
+        </div>
+        <div class="footer-links-group">
+            <h4>Offers Finance</h4>
+            <ul>
+                <li><a href="#">Current Deals</a></li>
+                <li><a href="#">Mistery Discount</a></li>
+                <li><a href="#">College Discount</a></li>
+            </ul>
+        </div>
+        <div class="footer-links-group">
+            <h4>Design Tools</h4>
+            <ul>
+                <li><a href="#">Dealer Location</a></li>
+                <li><a href="#">Build Car Price</a></li>
+                <li><a href="#">Search Inventory</a></li>
+            </ul>
+        </div>
+        <div class="footer-links-group">
+            <h4>Help Center</h4>
+            <ul>
+                <li><a href="#">Payment Services</a></li>
+                <li><a href="#">FAQ Community</a></li>
+                <li><a href="#">Terms Condition</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <hr class="footer-divider">
+        <p>&copy; Copyright Cartrix 2021 All Right Reserved</p>
+    </div>
+</footer>
 <script src="js/scripts.js"></script>
 </body>
 </html>

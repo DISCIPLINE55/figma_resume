@@ -5,6 +5,7 @@ header {
   padding: var(--padding-md) 0;
   position: relative;
   z-index: 10;
+  overflow: hidden;
 }
 
 nav {
@@ -105,7 +106,7 @@ nav {
   font-size: 2rem;
   cursor: pointer;
   color: var(--text-light);
-  z-index: 20;
+  z-index: 2;
   transition: transform 0.3s ease;
 }
 
@@ -122,20 +123,22 @@ nav {
   .nav-links {
     position: static;
     flex-direction: row;
-    width: auto;
+    width: 100%;
     background-color: transparent;
     border-bottom: none;
-    padding: 0;
+    padding: 0 var(--padding-md);
     display: flex;
     box-shadow: none;
   }
 
   .nav-links li {
-    margin: 0 0.9375rem;     /* 15px */
+    padding: 0 0.5rem;
+    /* margin: 0 0.9375rem; */     /* 15px */
   }
 
   .register-btn {
     display: block;
+    left: 75px;
   }
 
   .hamburger-menu {

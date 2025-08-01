@@ -90,8 +90,8 @@
 }
 
 .price-card ul li i {
-    margin-right: 10px;
-    color: var(--accent-pink);
+    margin-right: 0.4rem;
+    color: var(--text-dark);
 }
 
 .choose-plan-btn {

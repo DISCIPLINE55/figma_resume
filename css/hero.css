@@ -4,17 +4,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: var(--padding-md --padding-sm);
   position: relative;
   background-color: var(--dark-blue);
-  gap: 2rem;
+  gap: var(--gap-sm);
 }
 
 /* Hero Image Container */
 .hero-image-container {
   position: relative;
   width: 100%;
-  height: 25rem; /* Default mobile height */
+  height: 25rem;
   max-width: 100%;
 }
 
@@ -63,24 +63,25 @@
 
 /* Hero Content */
 .hero-content {
-  text-align: center;
+  margin-bottom: var(--margin-sm);
+  text-align: left;
   color: var(--text-light);
 }
 
 .hero-content h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--margin-sm);
 }
 
 .hero-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--margin-sm);
 }
 
 .get-started-btn {
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  border-radius: 2rem;
+  padding: var(--padding-sm --padding-md);
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-def);
   background-color: var(--accent-pink);
   color: white;
   border: none;
@@ -93,13 +94,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
-    gap: 2rem;
+    gap: var(--gap-sm);
   }
 
   .hero-content {
     flex: 1;
     text-align: left;
+     margin-bottom: var(--margin-md);
   }
 
   .hero-image-container {
@@ -127,7 +128,7 @@
 /* Desktop */
 @media (min-width: 1024px) {
   .hero-section {
-    padding: 2.5rem 3rem;
+    padding: var(--padding-md --padding-lg);
   }
 
   .hero-image-container {
@@ -142,4 +143,24 @@
   .hero-curve path {
     stroke-width: 0.01rem;
   }
+
+  /* Hero Content */
+.hero-content {
+  text-align: left;
+  margin-bottom: var(--margin-lg);
+  color: var(--text-light);
+}
+
+.hero-content h1 {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family-lg);
+  margin-top: var(--margin-lg);
+}
+
+.hero-content p {
+  text-align: left;
+  font-size: var(--font-size-sm);
+  margin-top: var(--margin-sm);
+}
+
 }

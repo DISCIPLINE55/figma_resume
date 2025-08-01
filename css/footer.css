@@ -32,7 +32,7 @@
     font-size: var(--padding-sm);
     color: var(--text-gray);
     margin-bottom: var(--padding-md --padding-md);
-    line-height: 1.8;
+    line-height: 1.5;
     text-align: left;
 }
 
@@ -129,6 +129,6 @@
 /* Desktop Layout */
 @media (min-width: 1024px) {
     .footer-content {
-        gap: 50px;
+        gap: 3rem;
     }
 }

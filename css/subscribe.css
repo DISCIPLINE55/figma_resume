@@ -31,6 +31,7 @@
 }
 
 .subscribe-btn {
+    border-radius: var(--border-default);
     padding: 14px 30px;
     font-size: 1.1rem;
 }

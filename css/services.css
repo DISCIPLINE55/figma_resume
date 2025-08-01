@@ -1,21 +1,20 @@
 /* css/services.css */
 
 .services-section {
-    background-color: #0A122E; /* Dark blue background color */
-    padding: var(--padding-lg) var(--padding-md); /* Consistent padding */
-    color: #FFFFFF; /* Default text color for the section */
+    background-color: #0A122E; 
+    padding: var(--padding-lg) var(--padding-md);
+    color: #FFFFFF; 
     overflow: hidden;
 
 }
 
 .services-section .container {
     display: flex;
-    
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
     margin: 0 auto;
-    width: 100%; /* Full width for the container */
-    padding: 0 var(--padding-md); /* Add horizontal padding for smaller screens */
+    width: 100%; 
+    padding: 0 var(--padding-md);
 }
 
 .services-section h2 { /* Targeting the main h2 for this section */
@@ -31,26 +30,26 @@
     font-size: 1rem;
     color: #FFFFFF; 
     line-height: 1.6;
-    font-weight: 400; /* Adjusted font weight */
-    text-align: Center; /* Centered as per why.png */
-    margin-bottom: 60px; /* Space below subtitle to grid */
-    max-width: 700px; /* Constrain width for readability */
+    font-weight: 400; 
+    text-align: Center; 
+    margin-bottom: 60px;
+    max-width: 700px; 
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 20px; /* Adjusted gap between cards */
-    width: 100%; /* Ensure grid takes full width */
+    grid-template-columns: 1fr;
+    gap: 20px; 
+    width: 100%;
 }
 
 .service-card {
-    background-color: #FFFFFF; /* Slightly lighter background for cards */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Border for cards */
-    border-radius: var(--border-radius-md); /* Rounded corners for cards */
+    background-color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: var(--border-radius-md);
     padding: var(--padding-sm);
-    text-align: left; /* Align text left within card */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    text-align: left; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .service-card:hover {
@@ -60,10 +59,10 @@
 
 /* Grouping icon and h3 for inline display */
 .service-card .icon-title-group {
-    display: flex; /* Use flexbox for icon and title */
-    align-items: flex-start; /* Align items to the start (top) */
-    gap: 15px; /* Space between icon and title */
-    margin-bottom: 15px; /* Space below the icon-title group */
+    display: flex; 
+    align-items: flex-start; 
+    gap: 15px; 
+    margin-bottom: 15px; /
 }
 
 
@@ -121,10 +120,10 @@
   
 
     .services-section .container {
-        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border as seen in Figma/image */
-        border-radius: var(--border-radius-md); /* Apply border-radius */
-        padding: 7rem 5rem; /* Internal padding for the whole container */
-        margin-top: -100px; /* Adjust negative margin to overlap previous section as seen in layout */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--border-radius-md); 
+        padding: 6rem 4rem; /* Internal padding for the whole container */
+        
     }
 
     /* Titles and subtitles are now inside the bordered container, so their alignment might need adjustment if they were outside */

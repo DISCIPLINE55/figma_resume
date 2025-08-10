@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
   padding: var(--padding-md --padding-sm);
   position: relative;
   background-color: var(--dark-blue);
@@ -13,6 +14,7 @@
 /* Hero Image Container */
 .hero-image-container {
   position: relative;
+   order: -1;
   width: 100%;
   height: 25rem;
   max-width: 100%;
@@ -105,6 +107,7 @@
 
   .hero-image-container {
     flex: 1;
+    order: 0;
     max-width: 45%;
     height: 32rem;
   }

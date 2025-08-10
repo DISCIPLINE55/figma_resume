@@ -12,7 +12,7 @@
     --white-cards: #FFFFFF;
     --text-dark: #000000;
     --light-dark-blue: #1A1B30;
-    --accent-pink: #FF4081;
+    --accent-pink: #FC3867;
     --text-light: #F0F0F0;
     --text-gray: #A0A0A0;
     --border-radius-sm: 0.75rem;
@@ -44,7 +44,7 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--dark-blue);
     color: var(--text-light);
-    line-height: 1.6;
+    line-height: 1.8;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 

@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
+    const body = document.body; // Reference to the body element
 
-        // Toggle mobile navigation menu
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', () => {
+    // Toggle mobile navigation menu
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            body.classList.toggle('menu-open'); // This is the new line of code
+
             // Toggle hamburger icon (e.g., bars to times)
             const icon = hamburger.querySelector('i');
             if (icon.classList.contains('fa-bars')) {
@@ -22,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
+                    body.classList.remove('menu-open'); // Remove the class on close
                     hamburger.querySelector('i').classList.remove('fa-times');
                     hamburger.querySelector('i').classList.add('fa-bars');
                 }
@@ -29,27 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-        // Optional: Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+    // Optional: Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-            
-        // Optional: Basic form submission feedback (for subscribe form)
-        const subscribeForm = document.querySelector('.subscribe-form');
-        if (subscribeForm) {
-            subscribeForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const emailInput = this.querySelector('input[type="email"]');
-                if (emailInput.value) {
-                    // In a real application, you would send this to a server
-                    console.log('Subscribed with:', emailInput.value);
-                    alert('Thank you for subscribing!'); 
-                    emailInput.value = ''; // Clear input
+    });
+
+    // Optional: Basic form submission feedback (for subscribe form)
+    const subscribeForm = document.querySelector('.subscribe-form');
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            if (emailInput.value) {
+                // In a real application, you would send this to a server
+                console.log('Subscribed with:', emailInput.value);
+                alert('Thank you for subscribing!'); 
+                emailInput.value = ''; // Clear input
             } else {
                 alert('Please enter a valid email address.');
             }
@@ -64,17 +68,17 @@ const backToTopBtn = document.getElementById("backToTop");
 
 // Show the button when scrolling down 200px
 window.onscroll = function () {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    backToTopBtn.style.display = "block";
-  } else {
-    backToTopBtn.style.display = "none";
-  }
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
 };
 
 // Scroll smoothly to the top
 backToTopBtn.onclick = function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 };

@@ -17,42 +17,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // Close menu when a nav link is clicked (for smooth scrolling)
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (navLinks.classList.contains('active')) {
-                            navLinks.classList.remove('active');
-                            hamburger.querySelector('i').classList.remove('fa-times');
-                            hamburger.querySelector('i').classList.add('fa-bars');
-                        }
-                    });
-                });
-            }
-
-            // Optional: Smooth scroll for internal links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Optional: Basic form submission feedback (for subscribe form)
-            const subscribeForm = document.querySelector('.subscribe-form');
-            if (subscribeForm) {
-                subscribeForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const emailInput = this.querySelector('input[type="email"]');
-                    if (emailInput.value) {
-                        // In a real application, you would send this to a server
-                        console.log('Subscribed with:', emailInput.value);
-                        alert('Thank you for subscribing!'); // Using alert for simplicity as per "basic JavaScript"
-                        emailInput.value = ''; // Clear input
-                    } else {
-                        alert('Please enter a valid email address.');
+            // Close menu when a nav link is clicked (for smooth scrolling)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        hamburger.querySelector('i').classList.remove('fa-times');
+                        hamburger.querySelector('i').classList.add('fa-bars');
                     }
                 });
-            }
+            });
+        }
+
+        // Optional: Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
+
+            // Optional: Basic form submission feedback (for subscribe form)
+        const subscribeForm = document.querySelector('.subscribe-form');
+        if (subscribeForm) {
+            subscribeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                if (emailInput.value) {
+                    // In a real application, you would send this to a server
+                    console.log('Subscribed with:', emailInput.value);
+                    alert('Thank you for subscribing!'); 
+                    emailInput.value = ''; // Clear input
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
+ });

@@ -1,19 +1,21 @@
-/* Header Section */
+/* Header Section - Mobile First */
 header {
   background-color: var(--dark-blue);
-  padding: var(--padding-md) 0;
   position: relative;
   z-index: 10;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
 }
 
 nav {
   display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-sm);
+}
+
+.nav-top-row {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--padding-sm);
+  padding: var(--padding-md) 0;
   width: 100%;
 }
 
@@ -22,6 +24,7 @@ nav {
   position: relative;
   display: flex;
   align-items: center;
+  min-width: 120px; /* Prevent logo from shrinking */
 }
 
 .nav-vectors {
@@ -42,21 +45,11 @@ nav {
 }
 
 .logo-text {
- /*  top: 0;
-  left: 0; */
   z-index: 2;
   transform: rotate(-45deg);
   color: var(--text-light);
   font-size: 1.6rem;
   font-weight: bold;
-}
-
-.logo {
-  position: relative;
-  z-index: 1;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--text-light);
 }
 
 /* Navigation links - mobile default hidden */
@@ -65,7 +58,7 @@ nav {
   flex-direction: column;
   width: 100%;
   background-color: var(--dark-blue);
-  padding: var(--padding-md) 0;
+  padding: var(--padding-sm) 0;
   text-align: center;
   border-bottom: 1px solid var(--light-dark-blue);
   box-shadow: 0 0.625rem 0.9375rem rgba(0, 0, 0, 0.2);
@@ -76,20 +69,20 @@ nav {
 }
 
 .nav-links li {
-  margin: 0.625rem 0;
+  margin: 0.05rem 0;
+}
+
+.nav-links a {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  display: block;
+  color: var(--text-gray);
+  transition: color 0.3s ease;
 }
 
 .nav-links a.action {
   font-weight: 700;
   color: var(--text-light);
-}
-
-.nav-links a {
-  font-size: 1.1rem;
-  padding: 0.75rem 0;
-  display: block;
-  color: var(--text-gray);
-  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -100,105 +93,154 @@ nav {
   display: none;
   background-color: transparent;
   border: 1px solid #FFFFFF;
-  padding: 1rem 4rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 3.125rem;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  white-space: nowrap; 
+  font-size: 0.9rem; 
+}
+
+.register-btn:hover {
+    background-color: var(--accent-pink); 
 }
 
 .hamburger-menu {
   display: block;
-  font-size: 2rem;
+  font-size: 1.3rem;
   cursor: pointer;
   color: var(--text-light);
   z-index: 2;
   transition: transform 0.3s ease;
+  padding: 0 0.2rem;
 }
 
 .hamburger-menu.active {
   transform: rotate(90deg);
 }
 
-/* Tablet and up */
+/* Tablet and up (768px) */
 @media (min-width: 768px) {
-  header {
+  nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 0 var(--padding-md);
+    flex-wrap: wrap; /* Allow elements to wrap if needed */
   }
 
-  nav {
-    padding: 0 var(--padding-md);
+  .nav-top-row {
+    padding: 0;
+    width: auto;
   }
 
   .nav-links {
     position: static;
+    display: flex;
     flex-direction: row;
     width: auto;
     background-color: transparent;
     border-bottom: none;
-    padding: 0 var(--padding-sd);
-    display: flex !important;
+    padding: 0;
+    margin: 0;
     box-shadow: none;
+    gap: 0.5rem; /* Reduced gap for tablet */
+    margin-right: auto;
+    flex-wrap: wrap; /* Allow links to wrap if needed */
   }
 
-  .nav-links li {
-    padding: 0 0.5rem;
-    margin: 0;
+ 
+
+  .nav-links a {
+    padding: 0 0.7rem; /* Reduced padding for tablet */
+    font-size: 0.9rem; /* Slightly smaller font for tablet */
   }
 
   .register-btn {
     display: inline-block;
+    margin-left: 1rem;
+    padding: 0.5rem 1.25rem; /* More compact for tablet */
   }
 
   .hamburger-menu {
     display: none;
   }
 
+  /* Logo adjustments */
   .logo-text {
     position: absolute;
     top: 2.5rem;
     left: 1.25rem;
-    z-index: 2;
     transform: rotate(-45deg);
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-size: 1.4rem; /* Slightly smaller for tablet */
   }
 
+  .svg-wrapper {
+    width: 12rem; /* Smaller logo for tablet */
+    height: 4.5rem;
+  }
+
+  .semi-arc:nth-child(1) { top: -3.5rem; left: 3.75rem; width: 5rem; }
+  .semi-arc:nth-child(2) { top: -9.5rem; left: 7rem; }
+  .semi-arc:nth-child(3) { top: -1.5rem; left: 0.5rem; }
+  .semi-arc:nth-child(4) { top: -0.25rem; left: -0.25rem; }
+  .semi-arc:nth-child(5) { top: 1rem; left: -1rem; }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+  nav {
+    padding: 0 var(--padding-lg);
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+  }
+
+  .nav-links {
+    margin-left: var(--padding-lg);
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .register-btn {
+    padding: 0.75rem 2rem;
+    margin-left: var(--padding-lg);
+    font-size: 1rem;
+  }
+
+  /* Enhanced logo styling */
   .svg-wrapper {
     width: 15.625rem;
     height: 5.625rem;
   }
 
-  .semi-arc:nth-child(1) { top: -4.375rem; left: 4.6875rem; width: 6.25rem; }
-  .semi-arc:nth-child(2) { top: -11.875rem; left: 8.75rem; }
-  .semi-arc:nth-child(3) { top: -1.875rem; left: 0.625rem; }
-  .semi-arc:nth-child(4) { top: -0.3125rem; left: -0.3125rem; }
-  .semi-arc:nth-child(5) { top: 1.25rem; left: -1.25rem; }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  nav {
-    padding: 0 var(--padding-lg);
-  }
-
-  .nav-links {
-    margin-left: 5rem;
-    gap: 1.5rem;
-  }
-
-  .svg-wrapper {
-    width: 18.75rem;
-    height: 5.625rem;
-  }
-
-  .curve {
-    width: 18.75rem;
-    height: 4.375rem;
-    filter: blur(0.25rem);
-  }
-
   .logo-text {
     top: 4.5rem;
     left: 1rem;
+    font-size: 1.8rem;
   }
+
+  .semi-arc {
+    stroke-width: 0.1rem !important;
+  }
+}
+
+/* Large Desktop (1200px) */
+@media (min-width: 1200px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .register-btn {
+    padding: 0.5rem 3rem;
+    font-size: 1.1rem;
+  }
+  
 }

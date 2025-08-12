@@ -1,9 +1,11 @@
 /* css/portfolio.css */
 .portfolio-section {
+    padding-top: 4rem;
     text-align: center;
 }
 
 p{
+    padding-top: 1rem;
     align-items:center;
     text-align: center;
 }

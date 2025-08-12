@@ -1,6 +1,6 @@
 .services-section {
     background-color: #0A122E; 
-    padding: var(--padding-lg) var(--padding-md);
+    /* padding: var(--padding-lg) var(--padding-md); */
     color: #FFFFFF; 
     overflow: hidden;
 }
@@ -11,7 +11,7 @@
     align-items: center;
     margin: 0 auto;
     width: 100%; 
-    padding: 0 var(--padding-md);
+    padding: var(--padding-md);
 }
 
 .services-section h2 {
@@ -135,7 +135,7 @@
         padding-top: 2.5rem;
         width: 100%;
         left: 46rem;
-        height: 25rem;
+        /* height: 25rem; */
     }
 
     .service-card .icon-title-group {

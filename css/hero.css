@@ -13,7 +13,7 @@
 /* Hero Image Container */
 .hero-image-container {
   position: relative;
-   order: -1;
+  order: -1;
   width: 100%;
   height: 25rem;
   max-width: 100%;
@@ -70,13 +70,13 @@
 }
 
 .hero-content h1 {
-  margin-bottom: var(--margin-sm);
+  padding-bottom: var(--margin-sm);
 }
 
 .hero-content p {
   text-align: left;
   font-size: var(--font-size-sm);
-  margin-bottom: var(--margin-sm);
+  padding-bottom: var(--margin-sm);
 }
 
 .get-started-btn {

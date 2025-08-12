@@ -126,7 +126,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--padding-md);
-    flex-wrap: wrap; /* Allow elements to wrap if needed */
+    flex-wrap: wrap; 
   }
 
   .nav-top-row {
@@ -144,22 +144,22 @@ nav {
     padding: 0;
     margin: 0;
     box-shadow: none;
-    gap: 0.5rem; /* Reduced gap for tablet */
+    gap: 0.5rem; 
     margin-right: auto;
-    flex-wrap: wrap; /* Allow links to wrap if needed */
+    flex-wrap: wrap; 
   }
 
  
 
   .nav-links a {
-    padding: 0 0.7rem; /* Reduced padding for tablet */
-    font-size: 0.9rem; /* Slightly smaller font for tablet */
+    padding: 0 0.7rem; 
+    font-size: 0.9rem; 
   }
 
   .register-btn {
     display: inline-block;
     margin-left: 1rem;
-    padding: 0.5rem 1.25rem; /* More compact for tablet */
+    padding: 0.5rem 1.25rem; 
   }
 
   .hamburger-menu {
@@ -172,11 +172,11 @@ nav {
     top: 2.5rem;
     left: 1.25rem;
     transform: rotate(-45deg);
-    font-size: 1.4rem; /* Slightly smaller for tablet */
+    font-size: 1.4rem; 
   }
 
   .svg-wrapper {
-    width: 12rem; /* Smaller logo for tablet */
+    width: 12rem; 
     height: 4.5rem;
   }
 
@@ -191,7 +191,7 @@ nav {
 @media (min-width: 1024px) {
   nav {
     padding: 0 var(--padding-lg);
-    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+    flex-wrap: nowrap; 
   }
 
   .nav-links {

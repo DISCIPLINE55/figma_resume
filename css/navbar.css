@@ -1,6 +1,6 @@
 /* Header Section - Mobile First */
 header {
-  background-color: var(--dark-blue);
+  background-color: #040F28;
   position: relative;
   z-index: 10;
 }
@@ -9,13 +9,14 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 0 var(--padding-sm);
+/*   background-color: #040F28; */
 }
 
 .nav-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--padding-md) 0;
+  padding: 0 var(--padding-md);
   width: 100%;
 }
 
@@ -24,6 +25,8 @@ nav {
   position: relative;
   display: flex;
   align-items: center;
+   padding-top: 1rem; /* Aspect ratio 3:1 */
+   width: 100%; /* Adjusted for better visibility */
   min-width: 120px; /* Prevent logo from shrinking */
 }
 
@@ -50,6 +53,7 @@ nav {
   color: var(--text-light);
   font-size: 1.6rem;
   font-weight: bold;
+  padding-bottom: 1rem;
 }
 
 /* Navigation links - mobile default hidden */
@@ -128,9 +132,18 @@ nav {
     padding: 0 var(--padding-md);
     flex-wrap: wrap; 
   }
+  
+  .logo-text {
+    z-index: 2;
+    transform: rotate(-45deg);
+    color: var(--text-light);
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-bottom: 5rem;
+  }
 
   .nav-top-row {
-    padding: 0;
+    padding: 0 var(--padding-sm);
     width: auto;
   }
 
@@ -193,9 +206,10 @@ nav {
     padding: 0 var(--padding-lg);
     flex-wrap: nowrap; 
   }
+  
 
   .nav-links {
-    margin-left: var(--padding-lg);
+    /* margin-left: var(--padding-lg); */
     gap: 1rem;
   }
 
@@ -215,16 +229,26 @@ nav {
     width: 15.625rem;
     height: 5.625rem;
   }
-
-  .logo-text {
-    top: 4.5rem;
-    left: 1rem;
-    font-size: 1.8rem;
-  }
-
+  
   .semi-arc {
     stroke-width: 0.1rem !important;
   }
+
+
+  .logo-text {
+  padding-bottom: -30rem;
+  color: var(--text-light);
+  font-size: 1.6rem;
+  font-weight: bold;
+  top: 4rem;
+  left: 2rem;
+  display: inline;
+}
+  
+.nav-top-row {
+  padding: 0;
+  width: auto;
+}
 }
 
 /* Large Desktop (1200px) */
@@ -232,6 +256,7 @@ nav {
   .nav-links {
     gap: 1.5rem;
   }
+  
 
   .nav-links a {
     font-size: 1.2rem;

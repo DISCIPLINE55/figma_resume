@@ -9,7 +9,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-light);
-    padding-top: var(--padding-md);
+    padding-top: 8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -17,7 +17,7 @@
 .pricing-section h2 {
     font-size: 2rem;
     font-weight: 800;
-    margin-bottom: var(--padding-md);
+    padding-bottom: var(--padding-sm);
     color: var(--text-light);
 }
 

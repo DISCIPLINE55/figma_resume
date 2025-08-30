@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--padding-md --padding-sm);
+  padding-top: 7rem;
   position: relative;
   background-color: var(--dark-blue);
   gap: var(--gap-sm);
@@ -15,9 +16,9 @@
   position: relative;
   order: -1;
   width: 100%;
-  height: 25rem;
+  /* height: 25rem; */
   max-width: 100%;
-  margin-top: 5rem;
+  /* padding-top: 5rem; */
 }
 
 .hero-vectors {
@@ -59,25 +60,27 @@
 
 .hero-image img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
 }
 
 /* Hero Content */
 .hero-content {
-  margin-bottom: var(--margin-sm);
+  margin-bottom: var(--margin-md);
   text-align: left;
-  color: var(--text-light);
+  color: /* var(--text-light) */#C4C4C4;
 }
 
 .hero-content h1 {
   padding-bottom: var(--margin-sm);
+  color: #C4C4C4;
 }
 
 .hero-content p {
   text-align: left;
   font-size: var(--font-size-sm);
   padding-bottom: var(--margin-sm);
+  color: #646464;
 }
 
 .get-started-btn {
@@ -88,6 +91,7 @@
   color: white;
   border: none;
   cursor: pointer;
+  max-width: 10rem;
 }
 
 /* Tablet */
@@ -102,14 +106,14 @@
   .hero-content {
     flex: 1;
     text-align: left;
-     margin-bottom: var(--margin-md);
+    margin-bottom: var(--margin-md);
   }
 
   .hero-image-container {
     flex: 1;
     order: 0;
     max-width: 45%;
-    height: 32rem;
+    /* height: 32rem; */
   }
 
     .hero-vectors {

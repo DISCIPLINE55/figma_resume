@@ -1,6 +1,6 @@
 .services-section {
     background-color: #0A122E; 
-    /* padding: var(--padding-lg) var(--padding-md); */
+    padding: var(--padding-lg) var(--padding-md);
     color: #FFFFFF; 
     overflow: hidden;
 }
@@ -11,7 +11,7 @@
     align-items: center;
     margin: 0 auto;
     width: 100%; 
-    padding: var(--padding-md);
+    padding: var(--padding-md) 0;
 }
 
 .services-section h2 {
@@ -55,7 +55,7 @@
 }
 
 .service-card .icon-title-group {
-    display: flex; 
+    display: block; 
     align-items: flex-start; 
     gap: 15px; 
     margin-bottom: 15px;
@@ -63,6 +63,7 @@
 
 .service-card .icon { 
     display: flex; 
+    flex-direction: column;
     justify-content: center; 
     align-items: center;
     width: 60px;
@@ -113,7 +114,7 @@
     .services-section .container {
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: var(--border-radius-md); 
-        padding: 6rem 4rem;
+        padding: 4rem 2rem;
     }
 
     .services-section h2 {
@@ -135,10 +136,11 @@
         padding-top: 2.5rem;
         width: 100%;
         left: 46rem;
-        /* height: 25rem; */
+        height: auto;
     }
 
     .service-card .icon-title-group {
+        display: flex; 
         gap: 1.875rem;
         margin-bottom: 20px;
     }

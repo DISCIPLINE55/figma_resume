@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* css/main.css */
+/* Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-blue: #08081A; /* Darker background as per new image */
+    --white-cards: #FFFFFF;
+    --text-dark: #000000;
+    --light-dark-blue: #1A1B30;
+    --accent-pink: #FC3867;
+    --text-light: #F0F0F0;
+    --text-gray: #A0A0A0;
+    --border-radius-sm: 0.75rem;
+    --border-radius-md: 1rem;
+    --border-radius-def: 2rem;
+    --border-default: 5rem;
+    --font-size-lg: 3rem;
+    --font-size-md: 2rem;
+    --font-size-sm: 1rem;
+    --font-weight-sm: 400;
+    --font-weight-md: 500;
+    --font-weight-lg: 700;
+    --Default-family: 'Ubuntu' sans-serif;
+    --margin-sm: 1.5rem;
+    --margin-md: 8rem;
+    --margin-lg: 10rem;
+    --padding-sm: 1rem;
+    --padding-md: 1.5rem;
+    --padding-lg: 2.5rem;
+    --gap-sm: 1.5rem;
+    --gap-md: 2.5rem;
+    --gap-lg: 6rem;
+    --btn-default-bg: #E0E0E0; 
+    --btn-default-text: #333; 
+    --btn-default-hover-bg: #CCCCCC;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    line-height: 1.8;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-pink);
+}
+
+ul {
+    list-style: none;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--padding-md);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-pink);
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #e03874; /* Slightly darker pink */
+    transform: translateY(-2px);
+}
+
+
+
+

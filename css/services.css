@@ -1,0 +1,162 @@
+.services-section {
+    background-color: #0A122E; 
+    padding: var(--padding-lg) var(--padding-md);
+    color: #FFFFFF; 
+    overflow: hidden;
+}
+
+.services-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%; 
+    padding: var(--padding-md) 0;
+}
+
+.services-section h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.services-section p:first-of-type {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    color: #FFFFFF; 
+    line-height: 1.6;
+    font-weight: 400; 
+    text-align: center; 
+    margin-bottom: 60px;
+    max-width: 700px; 
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; 
+    width: 100%;
+}
+
+.service-card {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: var(--border-radius-md);
+    padding: var(--padding-sm);
+    text-align: left; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card .icon-title-group {
+    display: block; 
+    align-items: flex-start; 
+    gap: 15px; 
+    margin-bottom: 15px;
+}
+
+.service-card .icon { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #FF006E;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 1.7rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    margin: 0; 
+    color: #000000;
+    line-height: 1.2;
+}
+
+.service-card p:last-child {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    color: #272727;
+    text-align: left;
+    margin-bottom: var(--padding-sm);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .services-section h2 {
+        font-size: 3rem;
+    }
+
+    .services-section p:first-of-type {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-section .container {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--border-radius-md); 
+        padding: 4rem 2rem;
+    }
+
+    .services-section h2 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .services-section p:first-of-type {
+        font-size: 1.15rem;
+        margin-bottom: 80px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.875rem;
+    }
+
+    .service-card {
+        padding-top: 2.5rem;
+        width: 100%;
+        left: 46rem;
+        height: auto;
+    }
+
+    .service-card .icon-title-group {
+        display: flex; 
+        gap: 1.875rem;
+        margin-bottom: 20px;
+    }
+
+    .service-card .icon {
+        width: 4.375rem;
+        height: 4.375rem;
+        font-size: 2.188rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-card p {
+        font-size: 1rem;
+        margin-top: 2.875rem;
+    }
+}

@@ -1,0 +1,269 @@
+/* Header Section - Mobile First */
+header {
+  background-color: #040F28;
+  position: relative;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-sm);
+/*   background-color: #040F28; */
+}
+
+.nav-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--padding-md);
+  width: 100%;
+}
+
+/* Logo container with vector */
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+   padding-top: 1rem; /* Aspect ratio 3:1 */
+   width: 100%; /* Adjusted for better visibility */
+  min-width: 120px; /* Prevent logo from shrinking */
+}
+
+.nav-vectors {
+  position: relative;
+}
+
+.svg-wrapper {
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.semi-arc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  z-index: 1;
+}
+
+.logo-text {
+  z-index: 2;
+  transform: rotate(-45deg);
+  color: /* var(--text-light) */#C4C4C4;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+/* Navigation links - mobile default hidden */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--dark-blue);
+  padding: var(--padding-sm) 0;
+  text-align: center;
+  border-bottom: 1px solid var(--light-dark-blue);
+  box-shadow: 0 0.625rem 0.9375rem rgba(0, 0, 0, 0.2);
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0.05rem 0;
+}
+
+.nav-links a {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  display: block;
+  color: var(--text-gray);
+  transition: color 0.3s ease;
+}
+
+.nav-links a.action {
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.nav-links a:hover {
+  color: var(--accent-pink);
+}
+
+.register-btn {
+  display: none;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3.125rem;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  white-space: nowrap; 
+  font-size: 0.9rem; 
+}
+
+.register-btn:hover {
+    background-color: var(--accent-pink); 
+}
+
+.hamburger-menu {
+  display: block;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--text-light);
+  z-index: 2;
+  transition: transform 0.3s ease;
+  padding: 0 0.2rem;
+}
+
+.hamburger-menu.active {
+  transform: rotate(90deg);
+}
+
+/* Tablet and up (768px) */
+@media (min-width: 768px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--padding-md);
+    flex-wrap: wrap; 
+  }
+  
+  .logo-text {
+    z-index: 2;
+    transform: rotate(-45deg);
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-bottom: 5rem;
+  }
+
+  .nav-top-row {
+    padding: 0 var(--padding-sm);
+    width: auto;
+  }
+
+  .nav-links {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    gap: 0.5rem; 
+    margin-right: auto;
+    flex-wrap: wrap; 
+  }
+
+ 
+
+  .nav-links a {
+    padding: 0 0.7rem; 
+    font-size: 0.9rem; 
+  }
+
+  .register-btn {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.5rem 1.25rem; 
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  /* Logo adjustments */
+  .logo-text {
+    position: absolute;
+    top: 2.5rem;
+    left: 1.25rem;
+    transform: rotate(-45deg);
+    font-size: 1.4rem; 
+  }
+
+  .svg-wrapper {
+    width: 12rem; 
+    height: 4.5rem;
+  }
+
+  .semi-arc:nth-child(1) { top: -3.5rem; left: 3.75rem; width: 5rem; }
+  .semi-arc:nth-child(2) { top: -9.5rem; left: 7rem; }
+  .semi-arc:nth-child(3) { top: -1.5rem; left: 0.5rem; }
+  .semi-arc:nth-child(4) { top: -0.25rem; left: -0.25rem; }
+  .semi-arc:nth-child(5) { top: 1rem; left: -1rem; }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+  nav {
+    padding: 0 var(--padding-lg);
+    flex-wrap: nowrap; 
+  }
+  
+
+  .nav-links {
+    /* margin-left: var(--padding-lg); */
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .register-btn {
+    padding: 0.75rem 2rem;
+    margin-left: var(--padding-lg);
+    font-size: 1rem;
+  }
+
+  /* Enhanced logo styling */
+  .svg-wrapper {
+    width: 15.625rem;
+    height: 5.625rem;
+  }
+  
+  .semi-arc {
+    stroke-width: 0.1rem !important;
+  }
+
+
+  .logo-text {
+  padding-bottom: -30rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  top: 4rem;
+  left: 2rem;
+  display: inline;
+}
+  
+.nav-top-row {
+  padding: 0;
+  width: auto;
+}
+}
+
+/* Large Desktop (1200px) */
+@media (min-width: 1200px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .register-btn {
+    padding: 0.5rem 3rem;
+    font-size: 1.1rem;
+  }
+  
+}
